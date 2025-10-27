@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>{% block title %}Dashboard{% endblock %}</title>
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+</head>
+<body>
+  <!-- background blobs -->
+  <div class="bg">
+    <div class="blob blob1"></div>
+    <div class="blob blob2"></div>
+    <div class="blob blob3"></div>
+  </div>
+
+  <!-- navbar -->
+  <header class="nav-shell">
+    <nav class="nav">
+      <div class="brand">
+        <span class="dot"></span>
+        <div class="brand-text">
+          Dashboard<span class="accent">.io</span>
+        </div>
+      </div>
+      <div class="links">
+        <button id="themeToggle" class="nav-btn small">Toggle Theme</button>
+        <a href="https://flask.palletsprojects.com/" target="_blank" class="nav-btn">Flask Docs ↗</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- page -->
+  <main class="page">
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="footer">
+    <p>Made with Flask · <span class="accent">Do the work, every day.</span></p>
+  </footer>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

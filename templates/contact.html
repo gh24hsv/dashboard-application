@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}Contact · Flask UI Demo{% endblock %}
+
+{% block content %}
+<section class="form-shell glass-card">
+  <h2 class="card-title">Contact us</h2>
+  <p class="subtext">This form submits via POST and renders your data below.</p>
+
+  <form class="form-grid" method="POST">
+    <div class="field">
+      <input required type="text" name="name" id="name" placeholder=" " />
+      <label for="name">Your name</label>
+    </div>
+
+    <div class="field">
+      <input required type="email" name="email" id="email" placeholder=" " />
+      <label for="email">Email</label>
+    </div>
+
+    <div class="field full">
+      <textarea required name="message" id="message" rows="4" placeholder=" "></textarea>
+      <label for="message">Message</label>
+    </div>
+
+    <button class="btn primary wide" type="submit">Send ✉</button>
+  </form>
+</section>
+
+{% if submitted %}
+<section class="response-shell glass-card success-card">
+  <h3 class="card-title">Thanks, {{ data.name }} 👋</h3>
+  <p class="subtext">We received your message. Here's what you sent:</p>
+
+  <div class="response-box">
+    <div class="resp-row"><span class="resp-label">Name</span><span class="resp-val">{{ data.name }}</span></div>
+    <div class="resp-row"><span class="resp-label">Email</span><span class="resp-val">{{ data.email }}</span></div>
+    <div class="resp-row"><span class="resp-label">Message</span><span class="resp-val">{{ data.message }}</span></div>
+  </div>
+
+  <a class="btn ghost" href="{{ url_for('contact') }}">Send another →</a>
+</section>
+{% endif %}
+{% endblock %}

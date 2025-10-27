@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% block title %}My Dashboard{% endblock %}
+
+{% block content %}
+
+<section class="dash-grid">
+
+  <!-- Clock / Date Card -->
+  <section class="glass-card card clock-card">
+    <div class="card-header">
+      <h2 class="card-title">Current Time</h2>
+      <button class="btn tiny ghost" id="toggleFormatBtn">24h</button>
+    </div>
+
+    <div class="clock-main">
+      <div id="clockDisplay" class="clock-time">--:--:--</div>
+      <div id="dateDisplay" class="clock-date">Loading date…</div>
+      <div id="tzDisplay" class="clock-tz"></div>
+    </div>
+
+    <div class="clock-tools">
+      <button class="btn ghost tiny" id="startStopwatchBtn">Start Stopwatch</button>
+      <button class="btn ghost tiny" id="resetStopwatchBtn">Reset</button>
+      <div class="stopwatch">
+        <span id="stopwatchDisplay">00:00.0</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Weather Card -->
+  <section class="glass-card card weather-card">
+    <div class="card-header">
+      <h2 class="card-title">Weather</h2>
+      <div class="weather-controls">
+        <input id="weatherCity" class="input small" placeholder="City..." value="Chennai">
+        <button class="btn tiny ghost" id="refreshWeatherBtn">↻</button>
+      </div>
+    </div>
+
+    <div id="weatherBody" class="weather-body">
+      <div class="weather-temp">--°</div>
+      <div class="weather-desc">Loading…</div>
+      <div class="weather-extra"><span>Humidity: --%</span></div>
+    </div>
+  </section>
+
+  <!-- Quote Card -->
+  <section class="glass-card card quote-card">
+    <div class="card-header">
+      <h2 class="card-title">Quote of the moment</h2>
+      <button class="btn tiny ghost" id="refreshQuoteBtn">New</button>
+    </div>
+    <blockquote class="quote-block">
+      <p id="quoteText">...</p>
+      <footer id="quoteAuthor">...</footer>
+    </blockquote>
+  </section>
+
+  <!-- Todo Card -->
+  <section class="glass-card card todo-card">
+    <div class="card-header">
+      <h2 class="card-title">Your Tasks</h2>
+    </div>
+
+    <form id="todoForm" class="todo-form">
+      <input
+        type="text"
+        id="todoInput"
+        class="input"
+        placeholder="Add a task and press Enter"
+        required
+      />
+    </form>
+
+    <ul id="todoList" class="todo-list">
+      <!-- tasks injected here -->
+    </ul>
+  </section>
+
+</section>
+
+{% endblock %}

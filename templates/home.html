@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block title %}Home · Flask UI Demo{% endblock %}
+
+{% block content %}
+<section class="card-grid">
+  <section class="glass-card hero-card">
+    <h1 class="headline">
+      Minimal Flask app.<br />
+      <span class="accent">Modern UI.</span>
+    </h1>
+    <p class="subtext">
+      This is a starter template you can ship to Cloud Run / Render / Railway.
+      The styles use pure CSS with blur, soft shadows, and animated blobs.
+    </p>
+
+    <div class="cta-row">
+      <a class="btn primary" href="{{ url_for('contact') }}">Try the form →</a>
+      <a class="btn ghost" href="https://github.com/pallets/flask" target="_blank">Star Flask</a>
+    </div>
+
+    <div class="stats-row">
+      <div class="stat-box">
+        <div class="stat-num">⚡ Fast</div>
+        <div class="stat-desc">Single file backend</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">🎨 Clean</div>
+        <div class="stat-desc">No CSS lib needed</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">🚀 Deployable</div>
+        <div class="stat-desc">Zero config dev</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="glass-card side-card">
+    <h2 class="card-title">How this works</h2>
+    <ul class="info-list">
+      <li><span class="bullet">1</span> `app.py` defines routes</li>
+      <li><span class="bullet">2</span> Jinja templates extend <code>base.html</code></li>
+      <li><span class="bullet">3</span> Reusable glass cards + buttons</li>
+      <li><span class="bullet">4</span> Fully responsive layout</li>
+    </ul>
+
+    <div class="code-snippet">
+<pre><code>from flask import Flask
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return "Hello UI"</code></pre>
+    </div>
+  </section>
+</section>
+{% endblock %}
