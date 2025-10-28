@@ -8,6 +8,10 @@ app = Flask(__name__)
 def dashboard():
     return render_template("dashboard.html")
 
+@app.route("/about")
+def about():
+    return render_template("about.html")
+
 # ✅ Updated Open-Meteo API version
 @app.route("/api/weather")
 def api_weather():

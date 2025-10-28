@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}About · Dashboard.io{% endblock %}
+
+{% block content %}
+<section class="glass-card" style="max-width: 800px; margin: 0 auto;">
+  <h1 class="card-title" style="font-size: 1.4rem;">About This Project</h1>
+  <p class="subtext" style="margin-top: 0.5rem;">
+    Welcome to <strong>Dashboard.io</strong> — a simple yet elegant Flask application that started as a “Hello World” project and evolved into an interactive personal dashboard.
+  </p>
+
+  <ul class="info-list" style="margin-top: 1rem;">
+    <li>🕒 Real-time clock with 12h/24h toggle</li>
+    <li>🌤 Weather updates using <a href="https://open-meteo.com" target="_blank">Open-Meteo API</a></li>
+    <li>💬 Daily motivational quotes from <a href="https://quotes-api-self.vercel.app/quote" target="_blank">Quotes API</a></li>
+    <li>📝 Personal to-do list saved locally</li>
+    <li>🌗 Light/Dark theme toggle</li>
+  </ul>
+
+  <p class="subtext" style="margin-top: 1rem;">
+    This project demonstrates how a basic Flask app can combine backend routes and frontend interactivity to create a fully responsive dashboard — great for learning Flask, API integration, and modern UI design.
+  </p>
+
+  <div style="margin-top: 2rem;">
+    <a href="{{ url_for('dashboard') }}" class="btn primary">← Back to Dashboard</a>
+  </div>
+</section>
+{% endblock %}
